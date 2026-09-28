@@ -156,9 +156,9 @@ def run():
                      timestamp=datetime(2022, 5, 20), description="RedGhost alias created on GhostBoard"),
     ])
     db.commit()
-    db.close()
     print(f"Seed complete: case #{demo_case.id} 'Operation Nightfall', "
           "4 personas, 3 evidence-backed relationships, 1 control persona.")
+    db.close()
 
 if __name__ == "__main__":
     run()
