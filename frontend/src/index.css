@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #161512;
+  --paper: #E9E2D0;
+  --text-on-ink: #E7E2D8;
+  --text-on-paper: #241F19;
+  --steel: #5B7C99;
+  --amber: #C98A3D;
+  --thread: #8B4B3B;
+  --teal: #3E6E5E;
+  --hairline: #26241F;
+}
+
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--text-on-ink);
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Replace the browser-default blue focus ring with the theme's own accent —
+   an unstyled focus ring is one of the fastest tells of an unfinished UI. */
+:focus-visible {
+  outline: 2px solid var(--steel);
+  outline-offset: 2px;
+}
+button:focus-visible, a:focus-visible {
+  outline-color: var(--amber);
+}
+
+::selection {
+  background: var(--steel);
+  color: var(--text-on-ink);
+}
+
+/* Dark, thin scrollbars matching the theme instead of the OS default */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--ink); }
+::-webkit-scrollbar-thumb { background: var(--hairline); border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: var(--steel); }
+* { scrollbar-color: var(--hairline) var(--ink); scrollbar-width: thin; }
+
