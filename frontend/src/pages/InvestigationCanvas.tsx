@@ -11,6 +11,7 @@ import PersonaNode from '../components/PersonaNode'
 import InspectorPanel from '../components/InspectorPanel'
 import TimelineStrip from '../components/TimelineStrip'
 import OrchestratorPanel from '../components/OrchestratorPanel'
+import ProductTour from '../components/ProductTour'
 
 const GREY = '#454239', STEEL = '#5B7C99', THREAD = '#8B4B3B'
 const parseId = (ref: string) => parseInt(ref.split(':')[1], 10)
@@ -168,7 +169,7 @@ export default function InvestigationCanvas() {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && investigate()}
-          className="bg-transparent border border-hairline focus:border-steel outline-none px-3 py-1 text-sm font-mono w-56 transition-colors"
+          className="tour-search bg-transparent border border-hairline focus:border-steel outline-none px-3 py-1 text-sm font-mono w-56 transition-colors"
           placeholder="investigate ShadowFox, who is NightFox…"
         />
         <button
@@ -224,7 +225,7 @@ export default function InvestigationCanvas() {
       )}
 
       <div className="flex-1 min-h-[260px] flex overflow-hidden">
-        <div ref={canvasRef} className="flex-1 min-w-0 relative overflow-hidden select-none">
+        <div ref={canvasRef} className="tour-canvas flex-1 min-w-0 relative overflow-hidden select-none">
           {dataState === 'loading' && (
             <div className="absolute inset-0 flex items-center justify-center">
               <p className="font-mono text-xs text-steel animate-pulse">loading investigation data…</p>
@@ -320,6 +321,7 @@ export default function InvestigationCanvas() {
          selectedRel ? `focused: ${selectedRel.from_label} ↔ ${selectedRel.to_label}` :
          `instrument rail — idle · ${personas.length} persona(s) · ${relationships.length} relationship(s) · ${inspectedRelIds.size} inspected`}
       </div>
+      <ProductTour />
     </div>
   )
 }

@@ -11,7 +11,7 @@ export default function App() {
           UNVEIL AI
         </Link>
         <span className="font-mono text-xs text-steel hidden sm:inline">
-          unified network for veiled-actor evidence &amp; identity linking
+          Unified Network for Veiled-actor Evidence &amp; Identity Linking
         </span>
       </header>
       <ConnectionStatus />
